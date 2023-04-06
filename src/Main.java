@@ -1,17 +1,18 @@
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-
-        int[] arr = {10, 1, 32, 3, 45};
-        int min = findMin(arr, arr.length);
-        System.out.println("Min from arr is: " + min);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int result = factorialofn(n);
+        System.out.println(n +"!"+ "=" + result);
     }
 
-    public static int findMin(int[] arr, int n) {
-        if (n == 1)
-            return arr[0];
+    public static int factorialofn(int n) {
+        if (n == 0){
+            return 1;
+        }
         else {
-            int min = findMin(arr, n - 1);
-            return Math.min(min, arr[n - 1]);
+            return n*factorialofn(n-1);
         }
     }
 }
