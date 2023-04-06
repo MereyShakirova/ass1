@@ -2,17 +2,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
         int n = sc.nextInt();
-        int result = factorialofn(n);
-        System.out.println(n +"!"+ "=" + result);
+        int atoPowerOfn = power(a, n);
+        System.out.println(a + " " + "to the power of" + " " + n + " " + "is" + " " + atoPowerOfn + ".");
     }
 
-    public static int factorialofn(int n) {
-        if (n == 0){
-            return 1;
+    public static int power(int a, int n) {
+        if (n == 1){
+            return a;
         }
         else {
-            return n*factorialofn(n-1);
+            return a*power(a, n-1);
         }
     }
 }
