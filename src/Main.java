@@ -1,21 +1,16 @@
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int result = Fibonacci(n);
-        System.out.println("Fibonacci of number" + " " + n + " = " + result + ".");
+        int[] arr = {3, 2, 4, 1};
+        double result = findarravg(arr, arr.length);
+        System.out.println("Average of this arr is " + result + ".");
     }
 
-    public static int Fibonacci(int n) {
-        if (n == 0){
+    public static double findarravg(int[] arr, int a) {
+        if (a == 0) {
             return 0;
         }
-        else if(n == 1){
-            return 1;
-        }
-        else{
-            return Fibonacci(n-1)+Fibonacci(n-2);
+        else {
+            return (arr[a-1] + (a-1)*findarravg(arr, a-1)) / a;
         }
     }
 }
